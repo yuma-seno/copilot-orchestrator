@@ -83,7 +83,7 @@ description: "サブエージェントへのタスク移譲の方法と指示フ
 ```
 
 **次のアクション：**
-1. `skills/orchestration/quality-gate.md` を参照して品質基準を確認
+1. `skills/quality-gate/SKILL.md` を参照して品質基準を確認
 2. 基準を満たしていれば `todo` でタスクを完了にする
 3. 次のタスクに移行する
 

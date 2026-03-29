@@ -33,7 +33,7 @@ description: "タスクの分解、依存関係の整理、優先度設定、ス
 
 #### レベル1: フェーズ（Phase）
 
-開発プロセスの大きな段階です。`skills/orchestration/workflow-selection.md` で選定されたワークフローに準じます。
+開発プロセスの大きな段階です。`skills/workflow-selection/SKILL.md` で選定されたワークフローに準じます。
 
 ```
 例: 調査 → 要件定義 → 設計 → 実装 → テスト → レビュー

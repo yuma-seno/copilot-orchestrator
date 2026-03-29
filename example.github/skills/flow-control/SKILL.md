@@ -19,7 +19,7 @@ description: "タスク実行中のフロー制御を行うスキル。フェー
 結果の確認
   ├─ 結果: "成功"
   │    ↓
-  │  品質ゲートチェック（skills/orchestration/quality-gate.md 参照）
+  │  品質ゲートチェック（skills/quality-gate/SKILL.md 参照）
   │    ├─ 全項目クリア → 次のフェーズへ進む
   │    ├─ 軽微な問題あり → サブエージェントに修正を指示し再チェック
   │    └─ 重大な問題あり → 前のフェーズに差し戻し
@@ -106,7 +106,7 @@ description: "タスク実行中のフロー制御を行うスキル。フェー
 1. `@sub-agent` に状況をセッションの `history` に記録させる
 2. ユーザに状況を報告（`askQuestion`）
 3. ユーザの指示に基づいてフローを調整
-4. 必要に応じてワークフローを再選定（`skills/orchestration/workflow-selection.md` 参照）
+4. 必要に応じてワークフローを再選定（`skills/workflow-selection/SKILL.md` 参照）
 
 ## フローの動的変更
 
@@ -120,7 +120,7 @@ description: "タスク実行中のフロー制御を行うスキル。フェー
 
 1. 現在のタスク進捗を確認（`todo` の状態）
 2. `@sub-agent` にセッション `history` に変更理由を記録させる
-3. 新しいワークフローを選定（`skills/orchestration/workflow-selection.md` 参照）
+3. 新しいワークフローを選定（`skills/workflow-selection/SKILL.md` 参照）
 4. `todo` を更新して新しいタスクリストを反映
 5. セッションルールの質問粒度が `high` または `medium` の場合、ユーザにフロー変更を通知
 

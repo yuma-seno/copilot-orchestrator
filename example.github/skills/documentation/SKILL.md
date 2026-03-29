@@ -83,7 +83,7 @@ API のエンドポイント仕様を記述します。
 
 ### 設計書
 
-技術的な設計を記述します。（`skills/development/architecture-design.md` の成果物）
+技術的な設計を記述します。（`skills/architecture-design/SKILL.md` の成果物）
 
 ### 手順書
 
