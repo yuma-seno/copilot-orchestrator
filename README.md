@@ -80,34 +80,32 @@ example.github/
 
 ```
 .copilot/sessions/[sessionId]/
-├── session.json     # セッション情報（id, status, rules, tasks）
+├── session.json     # セッション情報（id, status, rules）
 ├── summary.md       # セッション完了時の最終サマリ
 ├── logs/            # タスク実行ログ（判断記録・改善提案を含む）
 │   ├── [timestamp]-[task-name].md
 │   └── ...
-└── artifacts/       # 成果物（設計書、レビューレポート等）
 ```
 
 ### session.json
 
 ```json
 {
-  "id": "yyyymmddhhmmssfff",
+  "id": "yyyyMMddHHmmss",
   "createdAt": "ISO8601",
   "status": "active | completed",
   "rules": {
     "questionGranularity": "high | medium | low",
     "reviewPolicy": "auto | manual | skip"
-  },
-  "tasks": [
-    {"id": "task-001", "name": "...", "status": "pending | in-progress | done | failed"}
-  ]
+  }
 }
 ```
 
 ## 使い方
 
 ### 1. セットアップ
+
+#### プロジェクト単位で利用する場合
 
 `example.github/` の内容をプロジェクトの `.github/` にコピーする：
 
@@ -116,14 +114,15 @@ cp -r example.github/agents/ .github/agents/
 cp -r example.github/skills/ .github/skills/
 ```
 
+#### グローバルに利用する場合
+
+ユーザのローカル環境の `~/.copilot/` にコピーする：
+
+```bash
+cp -r example.github/agents/ ~/.copilot/agents/
+cp -r example.github/skills/ ~/.copilot/skills/
+```
+
 ### 2. オーケストレーターの起動
 
-```
-@orchestrator [開発タスクの指示]
-```
-
-オーケストレーターが質問粒度とレビュー方針を確認した後、ワークフローを選定してサブエージェントに作業を移譲します。
-
-## ライセンス
-
-MIT
+VSCodeのチャットパネルから、エージェントにOrchestratorを指定して起動するだけです。

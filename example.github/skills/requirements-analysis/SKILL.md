@@ -46,8 +46,6 @@ description: "ユーザ指示からの要件定義。計測可能な受け入れ
 
 ## 要件定義書
 
-`artifacts/requirements.md` に出力する：
-
 ```markdown
 # 要件定義書
 
