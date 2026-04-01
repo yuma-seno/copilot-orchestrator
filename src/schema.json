@@ -1,0 +1,58 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Agent Definition",
+  "description": "src/definitions/*.yaml のエージェント定義スキーマ",
+  "type": "object",
+  "required": ["name", "description", "tools", "argument-hint", "role", "steps", "summary-hint"],
+  "additionalProperties": false,
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "出力ファイル名。agents/{name}.agent.md として生成される"
+    },
+    "description": {
+      "type": "string",
+      "description": "YAML フロントマターの description"
+    },
+    "tools": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "YAML フロントマターの tools リスト"
+    },
+    "argument-hint": {
+      "type": "string",
+      "description": "YAML フロントマターの argument-hint"
+    },
+    "role": {
+      "type": "string",
+      "description": "「あなたの役割」セクションの本文"
+    },
+    "steps": {
+      "type": "string",
+      "description": "「手順」セクションの本文"
+    },
+    "sections": {
+      "type": "array",
+      "description": "追加セクション（任意）",
+      "items": {
+        "type": "object",
+        "required": ["title", "content"],
+        "additionalProperties": false,
+        "properties": {
+          "title": {
+            "type": "string",
+            "description": "セクションタイトル"
+          },
+          "content": {
+            "type": "string",
+            "description": "セクション本文"
+          }
+        }
+      }
+    },
+    "summary-hint": {
+      "type": "string",
+      "description": "「1行サマリの内容」セクションの本文"
+    }
+  }
+}

@@ -1,0 +1,39 @@
+#!/bin/sh
+# .githooks/pre-commit
+#
+# src/, sub-agents/, orchestrator/ のいずれかが
+# ステージされている場合に build-agents.py を実行し、
+# 生成された agents/ を自動でステージングに追加する。
+#
+# セットアップ:
+#   git config core.hooksPath .githooks
+
+REPO_ROOT="$(git rev-parse --show-toplevel)"
+CHANGED_SOURCES=$(git diff --cached --name-only | grep -E '^(src|sub-agents|orchestrator)/')
+CHANGED_AGENTS=$(git diff --cached --name-only | grep -E '^agents/')
+
+if [ -n "$CHANGED_AGENTS" ] && [ -z "$CHANGED_SOURCES" ]; then
+  echo "[pre-commit] agents/ の直接編集は禁止です。src/, sub-agents/, orchestrator/ を編集してビルドしてください。" >&2
+  exit 1
+fi
+
+if [ -z "$CHANGED_SOURCES" ]; then
+  exit 0
+fi
+
+echo "[pre-commit] ソースファイルの変更を検出。build-agents.py を実行します..."
+
+cd "$REPO_ROOT" || exit 1
+
+python3 build-agents.py
+BUILD_STATUS=$?
+
+if [ $BUILD_STATUS -ne 0 ]; then
+  echo "[pre-commit] ビルドに失敗しました。コミットを中止します。" >&2
+  exit 1
+fi
+
+git add agents/
+
+echo "[pre-commit] agents/ をステージングに追加しました。"
+exit 0
