@@ -165,7 +165,7 @@ Jinja2 テンプレート。出力される `.agent.md` のレイアウトを定
 
 | ファイル | 用途 |
 |---|---|
-| `SESSION_DIR/session-info.md` | ユーザ指示・ワークスペースパス・質問粒度などセッション全体のルール |
+| `SESSION_DIR/session-info.md` | ユーザ指示・ワークスペースパス・セッション全体のルール |
 | `SESSION_DIR/<NN>-<agent>-output.md` | 各エージェントの出力（NN は 01, 02, … の連番） |
 
 ### 通信の原則

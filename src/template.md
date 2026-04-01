@@ -14,6 +14,8 @@ argument-hint: "{{ argument_hint }}"
 
 {{ file_communication | trim }}
 
+{{ user_communication | trim }}
+
 ## あなたの役割
 
 {{ role | trim }}
