@@ -3,10 +3,10 @@ description: "リポジトリを分析し、設計に基づいた具体的な実
 tools:
   [
     "edit",
+    "execute",
     "read",
     "search",
     "todo",
-    "execute",
     "vscode/askQuestions",
   ]
 user-invocable: false

@@ -2,10 +2,10 @@ name: impl-plan
 description: "リポジトリを分析し、設計に基づいた具体的な実装計画を策定します。変更するファイル、実装順序、依存関係を明確にします。"
 tools:
   - edit
+  - execute
   - read
   - search
   - todo
-  - execute
   - vscode/askQuestions
 argument-hint: "SESSION_DIR、入力ファイルパス（要件/設計ドキュメント）、出力ファイルパス（SESSION_DIR/<NN>-plan-output.md）、実装対象の概要を含めてください。"
 

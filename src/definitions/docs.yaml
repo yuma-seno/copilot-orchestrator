@@ -54,7 +54,9 @@ sections:
     content: |
       - コードの実装変更は行わない
       - ドキュメントの作成・更新に専念する
-      - #tool:read/problems を使用して、Linter エラー・警告がないことを確認する（エラーはもちろん、警告も無視・放置してはならない）
+      - **Linter エラー・警告がないこと**（エラーはもちろん、警告も無視・放置してはならない）
+
+      > VSCode の Problems パネルやターミナルに表示される Linter の指摘は、`#tool:read/problems` で確認できる。
 
 summary-hint: |
   更新したドキュメントの概要を含めること。
